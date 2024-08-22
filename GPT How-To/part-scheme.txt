@@ -1,0 +1,68 @@
+Here's how you can set up your partitioning scheme using the graphical installer:
+1. Boot from the ISO
+
+    Boot the Server: Insert the Rocky Linux 9.4 ISO into the server's drive or mount it via virtual media (if using remote management) and boot from it.
+    Select Installation: When the installer menu appears, select "Install Rocky Linux 9.4".
+
+2. Select Installation Destination
+
+    Choose Disk: When you reach the "Installation Destination" screen, select the disk where you want to install Rocky Linux. This will typically be your primary SSD.
+
+    Custom Partitioning:
+        Select "Custom" under the "Storage Configuration" option.
+        Click "Done" to proceed to the partitioning screen.
+
+3. Configure Partitions in the Anaconda Installer
+
+    Automatic LVM Setup:
+        The installer may automatically suggest a partition layout using LVM. You can modify this as needed.
+
+    Manual LVM Setup:
+        If you prefer to configure LVM manually:
+            Click on the disk to start configuring the partitions.
+            Click "Add Mount Point" and choose each mount point (e.g., /, /boot, /home, etc.) as needed.
+            For each mount point:
+                Set the "Desired Capacity" according to your partitioning scheme.
+                Set the "Filesystem" to EXT4 for most partitions, and VFAT for /boot/efi.
+                Select "LVM" as the partitioning scheme where applicable.
+                Specify mount options like nodev, nosuid, or noexec for directories like /tmp, /var/tmp, etc.
+
+    Partition Setup:
+        /boot/efi: Set as EFI System Partition (FAT32), 1GB.
+        /boot: Set as EXT4, 2GB.
+        / (Root): Set as EXT4, 50GB.
+        swap: Set the swap size to 128GB.
+        /tmp: Set as EXT4, 20GB, with appropriate mount options.
+        /var: Set as EXT4, 100GB.
+        /var/log: Set as EXT4, 50GB.
+        /var/log/audit: Set as EXT4, 20GB.
+        /var/tmp: Set as EXT4, 20GB, with appropriate mount options.
+        /sto: Set as EXT4, 8TB.
+        /mnt/data: Set as EXT4, 8TB.
+        /home: Set as EXT4, 500GB.
+
+4. Apply Changes
+
+    Review Configuration: After setting up the partitions, review the configuration summary.
+    Accept Changes: If everything looks correct, click "Done" to apply the partitioning setup.
+    Proceed with Installation: Continue with the installation process as prompted.
+
+5. Complete Installation
+
+    Install Software: Choose the software packages and environments you want to install (e.g., Server with GUI, Minimal Install, etc.).
+    Set Root Password: Set the root password and create user accounts as needed.
+    Finalize Installation: Complete the installation and reboot the system when prompted.
+
+Benefits of Using the Graphical Installer
+
+    Ease of Use: The graphical interface simplifies partitioning tasks and allows you to visualize the disk layout.
+    Flexibility: You can easily adjust partition sizes, types, and mount options using the GUI.
+    No Manual Commands: All LVM and partition management tasks are handled by the installer, so you don't need to manually run commands in the terminal.
+
+Summary
+
+    No Need for Manual Setup: You do not need to manually set up partitions via the command line if you are using the graphical installer.
+    Use Custom Partitioning: During installation, choose "Custom" partitioning to manually set up LVM, EXT4, and the required partition sizes and mount points.
+    Follow Partitioning Scheme: Implement the recommended partitioning scheme within the installer, adjusting sizes and mount options as needed.
+
+This approach provides a balance between flexibility and ease of use, allowing you to meet both your operational needs and security requirements, all within the graphical installer environment.
