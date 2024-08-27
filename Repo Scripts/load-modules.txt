@@ -1,0 +1,144 @@
+#!/bin/bash
+
+cd /root
+
+   rm -fR /etc/firewalld
+   rm -fR /usr/lib/firewalld
+   rm -fR /usr/share/selinux/targeted/default/active/modules/100/firewalld
+   rm -fR /usr/share/selinux/targeted/default/active/modules/100/firewallgui
+   rm -fR /var/lib/selinux/targeted/active/modules/100/firewalld
+   rm -fR /var/lib/selinux/targeted/active/modules/100/firewallgui
+
+dnf -y swap centos-logos-httpd rocky-logos-httpd
+dnf -y config-manager --set-enabled powertools
+dnf -y update --refresh
+dnf -y group install 'Development Tools'
+dnf -y group install 'RPM Development Tools'
+dnf -y install \
+attr \
+autoconf \
+automake \
+bind-utils \
+btop \
+bzip2 \
+bzip2-devel \
+cifs-utils \
+cmake-filesystem \
+curl-devel \
+diffutils \
+dmidecode \
+dnf \
+dnf-utils \
+dos2unix \
+dosfstools \
+doxygen \
+e2fsprogs \
+e2fsprogs-libs \
+ethtool \
+expat \
+expat-devel \
+expect \
+findutils \
+flex \
+gcc \
+gcc-c++ \
+gdisk \
+gdbm-devel \
+git \
+git-core \
+glibc-langpack-en \
+gnupg2 \
+gnupg2-smime \
+gnutls \
+gpgme \
+grub2-pc \
+grub2-tools \
+grubby \
+gzip \
+htop \
+ipcalc \
+iperf \
+iproute \
+iputils \
+iptables \
+iptables-services \
+iptables-utils \
+jemalloc \
+jemalloc-devel \
+json-c \
+json-c-devel \
+json-glib \
+kernel \
+kernel-devel \
+libmaxminddb-devel \
+libtool \
+libmp4* \
+libxml2-devel \
+lmdb \
+lmdb-devel \
+lsof \
+lz4-libs \
+m4 \
+mailx \
+make \
+mdadm \
+mlocate \
+nbtscan \
+net-tools \
+network-scripts \
+nfs-utils \
+nmap \
+nmap-ncat \
+openssl-devel \
+p7zip \
+p7zip-plugins \
+parted \
+pcre-devel \
+pciutils \
+pkgconf \
+pkgconf-m4 \
+pkgconf-pkg-config \
+qemu-guest-agent \
+readline-devel \
+rsync \
+rsync-daemon \
+rsyslog \
+samba \
+samba-client \
+samba-client-libs \
+samba-common \
+samba-common-libs \
+samba-common-tools \
+screen \
+shim \
+systemd-devel \
+tar \
+tcpdump \
+tdb-tools \
+terminus* \
+tmux \
+tree \
+tzdata \
+unzip \
+util-linux \
+vim \
+vim-common \
+vim-enhanced \
+vim-filesystem \
+vim-minimal \
+virt-what \
+wget \
+which \
+xfsprogs \
+xz \
+xz-devel \
+xz-libs \
+yajl \
+yajl-devel \
+yum \
+yum-utils \
+zip \
+zlib \
+zlib-devel
+
+dnf clean all
