@@ -113,7 +113,6 @@ systemd-devel \
 tar \
 tcpdump \
 tdb-tools \
-terminus* \
 tmux \
 tree \
 tzdata \
