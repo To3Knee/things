@@ -59,8 +59,6 @@ iperf \
 iproute \
 iputils \
 iptables \
-iptables-services \
-iptables-utils \
 jemalloc \
 jemalloc-devel \
 json-c \
