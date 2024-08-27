@@ -2,8 +2,6 @@
 
 cd /root
 
-   rm -fR /etc/firewalld
-   rm -fR /usr/lib/firewalld
    rm -fR /usr/share/selinux/targeted/default/active/modules/100/firewalld
    rm -fR /usr/share/selinux/targeted/default/active/modules/100/firewallgui
    rm -fR /var/lib/selinux/targeted/active/modules/100/firewalld
