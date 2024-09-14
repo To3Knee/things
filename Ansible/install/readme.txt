@@ -1,3 +1,7 @@
+Example Output:
+============================================================================
+
+
 🔧  Installing Ansible from repository: http://repo.example.com/ansible.repo
 ✅  Ansible installed successfully.
 
@@ -31,14 +35,14 @@
 
 
 How to Use:
+============================================================================
 
-    Save the Script: Save the script as ansible.sh on your RedHat or Rocky Linux server.
+    Save the Script: Save the script as ansible-install.sh on your RedHat or Rocky Linux server.
 
     Make the Script Executable: 
-    Run the following command to make the script executable:
+ 
+          chmod +x ansible-install.sh
 
-          chmod +x setup_ansible.sh
+    Execute the script:
 
-    Run the Script: Execute the script:
-
-         ./setup_ansible.sh
+         ./ansible-install.sh
